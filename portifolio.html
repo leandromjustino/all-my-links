@@ -6,24 +6,45 @@
     <title>Meu Portfólio</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Estilos para o portfólio */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #2e2e2e;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding-top: 60px;
         }
 
         .projeto {
+            margin: 10px auto;
             width: 90%;
             max-width: 900px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
         }
 
         .projeto img {
@@ -33,52 +54,66 @@
         }
 
         .navegacao {
-            margin-top: 20px;
-            text-align: center;
+            margin: 30px 0;
         }
 
         .navegacao a {
+            display: inline-block;
+            background: #2e2e2e;
+            color: white;
+            padding: 10px 20px;
             text-decoration: none;
-            color: #2e2e2e;
-            font-size: 18px;
+            border-radius: 5px;
             font-weight: 600;
+            transition: 0.3s;
         }
 
         .navegacao a:hover {
-            text-decoration: underline;
+            background: #5a5a5a;
         }
     </style>
 </head>
 <body>
-
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 1">
+    <div class="navbar">
+        <a href="#foto1">Introdução</a>
+        <a href="#foto2">Meus Estudos</a>
+        <a href="#foto3">Sobre Minha Vida</a>
+        <a href="#foto4">Trabalho</a>
+        <a href="#foto5">Projetos</a>
+        <a href="#foto6">Família</a>
+        <a href="#foto7">Hobbies</a>
+        <a href="#foto8">Contato</a>
     </div>
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 2">
+    
+    <div class="container">
+        <div class="projeto" id="foto1">
+            <img src="Imagem/foto1.jpg" alt="Introdução">
+        </div>
+        <div class="projeto" id="foto2">
+            <img src="Imagem/foto1.jpg" alt="Meus Estudos">
+        </div>
+        <div class="projeto" id="foto3">
+            <img src="Imagem/foto1.jpg" alt="Sobre Minha Vida">
+        </div>
+        <div class="projeto" id="foto4">
+            <img src="Imagem/foto1.jpg" alt="Trabalho">
+        </div>
+        <div class="projeto" id="foto5">
+            <img src="Imagem/foto1.jpg" alt="Projetos">
+        </div>
+        <div class="projeto" id="foto6">
+            <img src="Imagem/foto1.jpg" alt="Família">
+        </div>
+        <div class="projeto" id="foto7">
+            <img src="Imagem/foto1.jpg" alt="Hobbies">
+        </div>
+        <div class="projeto" id="foto8">
+            <img src="Imagem/foto1.jpg" alt="Contato">
+        </div>
     </div>
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 3">
-    </div>
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 4">
-    </div>
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 5">
-    </div>
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 6">
-    </div>
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 7">
-    </div>
-    <div class="projeto">
-        <img src="Imagem/foto1.jpg" alt="Projeto 8">
-    </div>
-
+    
     <div class="navegacao">
         <a href="index.html">Voltar para os links da Bio</a>
     </div>
-
 </body>
 </html>
