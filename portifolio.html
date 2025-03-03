@@ -121,7 +121,14 @@
             }
 
             .navbar ul.active {
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                text-align: center;
+            }
+
+            .navbar ul li {
+                width: 100%;
             }
 
             .me-conheca {
