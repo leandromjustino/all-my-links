@@ -117,18 +117,22 @@
                 position: absolute;
                 top: 50px;
                 left: 0;
-                padding: 10px 0;
+                padding: 10px;
+                box-sizing: border-box;
             }
 
             .navbar ul.active {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: 1fr 1fr 1fr;
                 gap: 10px;
-                text-align: center;
+                justify-content: center;
+                max-width: 90%;
+                margin: 0 auto;
             }
 
             .navbar ul li {
                 width: 100%;
+                text-align: center;
             }
 
             .me-conheca {
