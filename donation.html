@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doe Agora</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #000;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .paypal {
+            background-color: #0070ba;
+        }
+        .pix {
+            background-color: #00b894;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Imagem/foto.jpg" alt="Sua Foto" class="profile-img">
+        <h2>Leandro M. Justino</h2>
+        <p>Português: Cada doação será utilizada para o avanço dos meus estudos e me ajudar a alcançar os meus sonhos acadêmicos.</p>
+        <p>English: Every donation will be used to further my studies and help achieve my academic dreams.</p>
+        <div class="buttons">
+            <a href="https://www.paypal.com/donate/?hosted_button_id=S9B8HJGXPNWDE" class="btn paypal">Doar / Donate via PayPal</a>
+            <a href="https://nubank.com.br/cobrar/orj2w/67c51c61-8cb8-402b-8064-7642a49b4da0" class="btn pix">Doar / Donate via Pix</a>
+        </div>
+    </div>
+</body>
+</html>
