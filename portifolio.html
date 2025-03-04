@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            color: #333;
         }
 
         .navbar {
@@ -27,24 +26,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.3s ease;
         }
 
         .menu-toggle {
             background: none;
             border: none;
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
             display: none;
             margin-right: 20px;
-            transition: transform 0.3s ease;
         }
 
         .navbar-text {
             color: white;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             display: none;
             margin-left: 20px;
         }
@@ -68,18 +65,17 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            padding: 10px 15px;
-            border-radius: 8px;
-            transition: background 0.3s, transform 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
         .navbar a:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
         }
 
         .container {
-            padding-top: 100px;
+            padding-top: 80px;
         }
 
         .projeto {
@@ -89,7 +85,7 @@
             justify-content: center;
             align-items: center;
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateX(-100%);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
@@ -97,33 +93,30 @@
             max-width: 90%;
             max-height: 80vh;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            /* Removido o arredondamento para deixar as bordas pontiagudas */
-            border-radius: 0;
         }
 
         .projeto.ativo {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
         .navegacao {
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
         .navegacao a {
             display: inline-block;
             background: #2e2e2e;
             color: white;
-            padding: 12px 25px;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 5px;
             font-weight: 600;
-            transition: background 0.3s ease, transform 0.3s;
+            transition: 0.3s;
         }
 
         .navegacao a:hover {
             background: #555555;
-            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
@@ -147,19 +140,16 @@
                 width: 85%;
                 background: #2e2e2e;
                 position: absolute;
-                top: 60px;
+                top: 50px;
                 left: 0;
-                padding: 20px;
-                border-radius: 10px;
-                transition: height 0.5s ease;
+                padding: 10px;
             }
 
             .navbar ul.active {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr); /* Ajuste para 3 colunas no menu */
-                gap: 3px;
+                grid-template-columns: repeat(3, 1fr); /* Dividindo em 3 colunas */
+                gap: 10px; /* Espaçamento entre as colunas */
                 text-align: center;
-                height: auto;
             }
 
             .navbar ul li {
@@ -167,7 +157,7 @@
             }
 
             .navbar ul li a {
-                padding: 12px 0;
+                padding: 8px 0; /* Ajuste de padding para otimizar espaço */
             }
         }
     </style>
