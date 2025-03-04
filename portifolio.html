@@ -120,65 +120,44 @@
         }
 
         @media (max-width: 768px) {
-    /* Ajuste para o menu hamburguer */
-    .menu-toggle {
-        display: block;
-        margin-right: 20px; /* Ajuste do botão hamburguer para ficar mais centralizado */
-        margin-left: 0;
-    }
+            /* Ajuste para o menu hamburguer */
+            .menu-toggle {
+                display: block;
+                margin-right: 30px;
+                margin-left: -10px;
+            }
 
-    .navbar-text {
-        display: block;
-        text-align: left;
-        margin-left: 20px; /* Reduzir espaço à esquerda */
-    }
+            .navbar-text {
+                display: block;
+                text-align: left;
+                margin-left: 15px;
+            }
 
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        background: #2e2e2e;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        padding: 10px;
-        box-sizing: border-box;
-    }
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 85%;
+                background: #2e2e2e;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding: 10px;
+            }
 
-    .navbar ul.active {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-        gap: 10px;
-        text-align: center;
-        width: 90%; /* O menu ocupa toda a largura da tela */
-        padding-left: 10px; /* Pequeno espaçamento para ajustar */
-        padding-right: 10px; /* Espaçamento lateral igual */
-        box-sizing: border-box;
-    }
+            .navbar ul.active {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* Dividindo em 3 colunas */
+                gap: 10px; /* Espaçamento entre as colunas */
+                text-align: center;
+            }
 
-    .navbar ul li {
-        width: 100%;
-    }
+            .navbar ul li {
+                width: auto;
+            }
 
-    .navbar ul li a {
-        padding: 8px 0;
-        white-space: nowrap; /* Evita quebra de texto */
-    }
-}
-
-    }
-}
-
-    }
-}
-
-    }
-}
-
-    }
-}
-
+            .navbar ul li a {
+                padding: 8px 0; /* Ajuste de padding para otimizar espaço */
             }
         }
     </style>
