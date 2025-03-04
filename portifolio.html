@@ -24,7 +24,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -35,6 +35,15 @@
             font-size: 24px;
             cursor: pointer;
             display: none;
+            margin-right: 20px; /* Ajuste de margem para não ficar no extremo direito */
+        }
+
+        .navbar-text {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            display: none;
+            margin-left: 20px; /* Espaço para deixar texto no lado esquerdo */
         }
 
         .navbar ul {
@@ -44,6 +53,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         .navbar ul li {
@@ -69,15 +79,25 @@
         }
 
         .projeto {
-            margin: 10px auto;
-            width: 90%;
-            max-width: 900px;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
         .projeto img {
-            max-width: 100%;
-            height: auto;
+            max-width: 90%;
+            max-height: 80vh;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .projeto.ativo {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .navegacao {
@@ -100,60 +120,56 @@
         }
 
         @media (max-width: 768px) {
+            /* Mover o ícone do menu hamburguer um pouco mais para a esquerda */
             .menu-toggle {
                 display: block;
+                margin-right: 30px; /* Mais margem à direita */
+                margin-left: -10px; /* Levemente mais para a esquerda */
             }
 
-            .navbar {
-                justify-content: space-between;
+            .navbar-text {
+                display: block;
+                text-align: left;
+                margin-left: 15px; /* Espaço para o texto à esquerda */
             }
 
             .navbar ul {
+                display: none;
                 flex-direction: column;
                 align-items: center;
-                display: none;
                 width: 100%;
                 background: #2e2e2e;
                 position: absolute;
                 top: 50px;
                 left: 0;
                 padding: 10px;
-                box-sizing: border-box;
             }
 
             .navbar ul.active {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 10px;
+                display: flex;
+                flex-direction: column;
                 justify-content: center;
-                max-width: 90%;
-                margin: 0 auto;
+                align-items: center;
+                text-align: center; /* Centraliza o texto */
             }
 
             .navbar ul li {
-                width: 100%;
+                width: 100%; /* Deixa as opções centralizadas */
                 text-align: center;
+                margin: 3px 0; /* Reduzir o espaço entre os itens */
             }
 
-            .me-conheca {
-                display: block;
-                color: white;
-                font-weight: 600;
-                font-size: 16px;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .me-conheca {
-                display: none;
+            .navbar ul li a {
+                width: 100%;
+                padding: 8px 0; /* Reduzir o padding dos links para economizar espaço */
             }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <span class="me-conheca">Me conheça melhor! </span>
-        <button class="menu-toggle">☰</button>
+        <span class="navbar-text">Me conheça melhor</span> <!-- Texto à esquerda -->
+        <button class="menu-toggle">☰</button> <!-- Botão hamburguer -->
         <ul>
             <li><a href="#foto1">Introdução</a></li>
             <li><a href="#foto2">Meus Estudos</a></li>
@@ -165,42 +181,41 @@
             <li><a href="#foto8">Contato</a></li>
         </ul>
     </div>
-    
+
     <div class="container">
-        <div class="projeto" id="foto1">
-            <img src="Imagem/foto1.jpg" alt="Introdução">
-        </div>
-        <div class="projeto" id="foto2">
-            <img src="Imagem/foto1.jpg" alt="Meus Estudos">
-        </div>
-        <div class="projeto" id="foto3">
-            <img src="Imagem/foto1.jpg" alt="Sobre Minha Vida">
-        </div>
-        <div class="projeto" id="foto4">
-            <img src="Imagem/foto1.jpg" alt="Trabalho">
-        </div>
-        <div class="projeto" id="foto5">
-            <img src="Imagem/foto1.jpg" alt="Projetos">
-        </div>
-        <div class="projeto" id="foto6">
-            <img src="Imagem/foto1.jpg" alt="Família">
-        </div>
-        <div class="projeto" id="foto7">
-            <img src="Imagem/foto1.jpg" alt="Hobbies">
-        </div>
-        <div class="projeto" id="foto8">
-            <img src="Imagem/foto1.jpg" alt="Contato">
-        </div>
+        <div class="projeto" id="foto1"><img src="Imagem/foto1.jpg" alt="Introdução"></div>
+        <div class="projeto" id="foto2"><img src="Imagem/foto1.jpg" alt="Meus Estudos"></div>
+        <div class="projeto" id="foto3"><img src="Imagem/foto1.jpg" alt="Sobre Minha Vida"></div>
+        <div class="projeto" id="foto4"><img src="Imagem/foto1.jpg" alt="Trabalho"></div>
+        <div class="projeto" id="foto5"><img src="Imagem/foto1.jpg" alt="Projetos"></div>
+        <div class="projeto" id="foto6"><img src="Imagem/foto1.jpg" alt="Família"></div>
+        <div class="projeto" id="foto7"><img src="Imagem/foto1.jpg" alt="Hobbies"></div>
+        <div class="projeto" id="foto8"><img src="Imagem/foto1.jpg" alt="Contato"></div>
     </div>
     
     <div class="navegacao">
         <a href="index.html">Voltar para os links da Bio</a>
     </div>
-
+    
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.navbar ul').classList.toggle('active');
         });
+
+        function animarFotos() {
+            const fotos = document.querySelectorAll('.projeto');
+            const alturaJanela = window.innerHeight;
+            
+            fotos.forEach(foto => {
+                const distanciaTopo = foto.getBoundingClientRect().top;
+                if (distanciaTopo < alturaJanela * 0.75) {
+                    foto.classList.add('ativo');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animarFotos);
+        animarFotos();
     </script>
 </body>
 </html>
