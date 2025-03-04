@@ -35,7 +35,7 @@
             font-size: 24px;
             cursor: pointer;
             display: none;
-            margin-right: 20px; /* Ajuste de margem para não ficar no extremo direito */
+            margin-right: 20px;
         }
 
         .navbar-text {
@@ -43,7 +43,7 @@
             font-weight: 600;
             font-size: 16px;
             display: none;
-            margin-left: 20px; /* Espaço para deixar texto no lado esquerdo */
+            margin-left: 20px;
         }
 
         .navbar ul {
@@ -120,17 +120,17 @@
         }
 
         @media (max-width: 768px) {
-            /* Mover o ícone do menu hamburguer um pouco mais para a esquerda */
+            /* Ajuste para o menu hamburguer */
             .menu-toggle {
                 display: block;
-                margin-right: 30px; /* Mais margem à direita */
-                margin-left: -10px; /* Levemente mais para a esquerda */
+                margin-right: 30px;
+                margin-left: -10px;
             }
 
             .navbar-text {
                 display: block;
                 text-align: left;
-                margin-left: 15px; /* Espaço para o texto à esquerda */
+                margin-left: 15px;
             }
 
             .navbar ul {
@@ -142,34 +142,31 @@
                 position: absolute;
                 top: 50px;
                 left: 0;
-                padding: 10px;
+                padding: 10px 15px; /* Adicionando padding nas laterais */
             }
 
             .navbar ul.active {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center; /* Centraliza o texto */
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* Dividindo em 3 colunas */
+                gap: 10px; /* Espaçamento entre as colunas */
+                text-align: center;
             }
 
             .navbar ul li {
-                width: 100%; /* Deixa as opções centralizadas */
-                text-align: center;
-                margin: 3px 0; /* Reduzir o espaço entre os itens */
+                width: 100%;
             }
 
             .navbar ul li a {
-                width: 100%;
-                padding: 8px 0; /* Reduzir o padding dos links para economizar espaço */
+                padding: 8px 0;
+                white-space: nowrap; /* Evita que as frases quebrem */
             }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <span class="navbar-text">Me conheça melhor</span> <!-- Texto à esquerda -->
-        <button class="menu-toggle">☰</button> <!-- Botão hamburguer -->
+        <span class="navbar-text">Me conheça melhor</span>
+        <button class="menu-toggle">☰</button>
         <ul>
             <li><a href="#foto1">Introdução</a></li>
             <li><a href="#foto2">Meus Estudos</a></li>
