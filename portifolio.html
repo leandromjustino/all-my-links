@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            overflow-x: hidden;
         }
 
         .navbar {
@@ -24,7 +25,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -35,15 +36,8 @@
             font-size: 24px;
             cursor: pointer;
             display: none;
-            margin-right: 20px;
-        }
-
-        .navbar-text {
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-            display: none;
-            margin-left: 20px;
+            position: relative;
+            left: -20px; /* Move o botão 10px para a esquerda */
         }
 
         .navbar ul {
@@ -53,7 +47,6 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            width: 100%;
         }
 
         .navbar ul li {
@@ -76,28 +69,27 @@
 
         .container {
             padding-top: 80px;
+            overflow-x: hidden;
         }
 
         .projeto {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 1000px;
             transform: translateX(-100%);
-            transition: opacity 1s ease-out, transform 1s ease-out;
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
         }
 
         .projeto img {
-            max-width: 90%;
-            max-height: 80vh;
+            max-width: 100%;
+            height: auto;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .projeto.ativo {
-            opacity: 1;
+        .projeto.show {
             transform: translateX(0);
+            opacity: 1;
         }
 
         .navegacao {
@@ -106,7 +98,7 @@
 
         .navegacao a {
             display: inline-block;
-            background: #2e2e2e;
+            background: #2e2e2e; /* Cor do YouTube */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -116,55 +108,67 @@
         }
 
         .navegacao a:hover {
-            background: #555555;
+            background: #CC0000; /* Tom mais escuro ao passar o mouse */
         }
 
         @media (max-width: 768px) {
-            /* Ajuste para o menu hamburguer */
             .menu-toggle {
                 display: block;
-                margin-right: 30px;
-                margin-left: -10px;
             }
 
-            .navbar-text {
-                display: block;
-                text-align: left;
-                margin-left: 15px;
+            .navbar {
+                justify-content: space-between;
             }
 
             .navbar ul {
-                display: none;
                 flex-direction: column;
                 align-items: center;
-                width: 85%;
+                display: none;
+                width: 100%;
                 background: #2e2e2e;
                 position: absolute;
                 top: 50px;
                 left: 0;
                 padding: 10px;
+                box-sizing: border-box;
             }
 
             .navbar ul.active {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr); /* Dividindo em 3 colunas */
-                gap: 10px; /* Espaçamento entre as colunas */
-                text-align: center;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+                justify-content: center;
+                max-width: 90%;
+                margin: 0 auto;
             }
 
             .navbar ul li {
-                width: auto;
+                width: 100%;
+                text-align: center;
             }
 
-            .navbar ul li a {
-                padding: 8px 0; /* Ajuste de padding para otimizar espaço */
+            .me-conheca {
+                display: block;
+                color: white;
+                font-weight: 600;
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .me-conheca {
+                display: none;
+            }
+
+            .projeto img {
+                max-width: 1000px;
             }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <span class="navbar-text">Me conheça melhor</span>
+        <span class="me-conheca">Me conheça melhor! </span>
         <button class="menu-toggle">☰</button>
         <ul>
             <li><a href="#foto1">Introdução</a></li>
@@ -177,41 +181,59 @@
             <li><a href="#foto8">Contato</a></li>
         </ul>
     </div>
-
+    
     <div class="container">
-        <div class="projeto" id="foto1"><img src="Imagem/foto1.jpg" alt="Introdução"></div>
-        <div class="projeto" id="foto2"><img src="Imagem/foto1.jpg" alt="Meus Estudos"></div>
-        <div class="projeto" id="foto3"><img src="Imagem/foto1.jpg" alt="Sobre Minha Vida"></div>
-        <div class="projeto" id="foto4"><img src="Imagem/foto1.jpg" alt="Trabalho"></div>
-        <div class="projeto" id="foto5"><img src="Imagem/foto1.jpg" alt="Projetos"></div>
-        <div class="projeto" id="foto6"><img src="Imagem/foto1.jpg" alt="Família"></div>
-        <div class="projeto" id="foto7"><img src="Imagem/foto1.jpg" alt="Hobbies"></div>
-        <div class="projeto" id="foto8"><img src="Imagem/foto1.jpg" alt="Contato"></div>
+        <div class="projeto" id="foto1">
+            <img src="Imagem/foto1.jpg" alt="Introdução">
+        </div>
+        <div class="projeto" id="foto2">
+            <img src="Imagem/foto1.jpg" alt="Meus Estudos">
+        </div>
+        <div class="projeto" id="foto3">
+            <img src="Imagem/foto1.jpg" alt="Sobre Minha Vida">
+        </div>
+        <div class="projeto" id="foto4">
+            <img src="Imagem/foto1.jpg" alt="Trabalho">
+        </div>
+        <div class="projeto" id="foto5">
+            <img src="Imagem/foto1.jpg" alt="Projetos">
+        </div>
+        <div class="projeto" id="foto6">
+            <img src="Imagem/foto1.jpg" alt="Família">
+        </div>
+        <div class="projeto" id="foto7">
+            <img src="Imagem/foto1.jpg" alt="Hobbies">
+        </div>
+        <div class="projeto" id="foto8">
+            <img src="Imagem/foto1.jpg" alt="Contato">
+        </div>
     </div>
     
     <div class="navegacao">
-        <a href="index.html">Voltar para os links da Bio</a>
+        <a href="SEU_CANAL_URL" target="_blank">Visite meu canal no YouTube</a>
     </div>
-    
+
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.navbar ul').classList.toggle('active');
         });
 
-        function animarFotos() {
-            const fotos = document.querySelectorAll('.projeto');
-            const alturaJanela = window.innerHeight;
-            
-            fotos.forEach(foto => {
-                const distanciaTopo = foto.getBoundingClientRect().top;
-                if (distanciaTopo < alturaJanela * 0.75) {
-                    foto.classList.add('ativo');
+        // Função para exibir animação com scroll
+        function scrollAnimation() {
+            var projetos = document.querySelectorAll('.projeto');
+            var windowHeight = window.innerHeight;
+
+            projetos.forEach(function(projeto) {
+                var projectPosition = projeto.getBoundingClientRect().top;
+
+                if (projectPosition < windowHeight - 100) {
+                    projeto.classList.add('show');
                 }
             });
         }
-        
-        window.addEventListener('scroll', animarFotos);
-        animarFotos();
+
+        window.addEventListener('scroll', scrollAnimation);
+        window.addEventListener('load', scrollAnimation);
     </script>
 </body>
 </html>
