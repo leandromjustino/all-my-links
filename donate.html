@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support My Work</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4fc3f7;
+            --background: #f8f9fa;
+            --text: #2d3b55;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .photo-container {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 1rem auto 2rem;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: var(--text);
+            font-weight: 300;
+            max-width: 80%;
+            line-height: 1.8;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-paypal {
+            background-color: #0070ba;
+            color: white;
+        }
+        
+        .btn-paypal:hover {
+            background-color: #005ea6;
+            transform: translateY(-3px);
+        }
+        
+        .btn-pix {
+            background-color: #32BCAD;
+            color: white;
+        }
+        
+        .btn-pix:hover {
+            background-color: #27a599;
+            transform: translateY(-3px);
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        footer {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            background-color: #f5f5f5;
+        }
+        
+        @media (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+                max-width: 95%;
+            }
+            
+            .photo-container {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animate">Support My Journey</h1>
+            <p class="subtitle animate delay-1">Your generosity makes a difference</p>
+        </header>
+        
+        <div class="content">
+            <div class="photo-container animate delay-1">
+                <img src="/imagem/foto1.png" alt="Profile Photo">
+            </div>
+            
+            <p class="message animate delay-2">
+                "Every small contribution helps me create more meaningful content. Your support isn't just a donation—it's an investment in our shared future."
+            </p>
+            
+            <div class="buttons animate delay-3">
+                <a href="#paypal-link" class="btn btn-paypal">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6.5 2h10.5c1.5 0 3 1.5 3 3 0 4-2.5 5-4 5h-7l-1 4h-3l2-12z"></path>
+                        <path d="M4.5 10h10.5c1.5 0 3 1.5 3 3 0 4-2.5 5-4 5h-7l-1 4h-3l2-12z"></path>
+                    </svg>
+                    Donate with PayPal
+                </a>
+                
+                <a href="#pix-link" class="btn btn-pix">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                    Pay with PIX
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            Thank you for your support! ❤️
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // You can replace the placeholder with actual image
+            // Replace PayPal and PIX links with actual ones
+            const paypalBtn = document.querySelector('.btn-paypal');
+            const pixBtn = document.querySelector('.btn-pix');
+            
+            paypalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Replace with actual PayPal link
+                window.open('https://www.paypal.com/donate/?hosted_button_id=S9B8HJGXPNWDE', '_blank');
+            });
+            
+            pixBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Show PIX QR code or copy PIX key
+                window.open('https://nubank.com.br/cobrar/orj2w/67c51c61-8cb8-402b-8064-7642a49b4da0')
+            });
+        });
+    </script>
+</body>
+</html>
