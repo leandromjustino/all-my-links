@@ -144,6 +144,7 @@
         .icon {
             width: 24px;
             height: 24px;
+            min-width: 16px; /* Garante que o ícone não encolha demais */
         }
         
         footer {
@@ -152,6 +153,18 @@
             font-size: 0.9rem;
             color: #666;
             background-color: #f5f5f5;
+        }
+        
+        .email-link {
+            color: #666; 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 0.5rem;
+            flex-wrap: nowrap; /* Impede que o conteúdo quebre em linhas */
+            margin: 0 auto;
+            width: fit-content; /* Ajusta a largura ao conteúdo */
         }
         
         @media (max-width: 768px) {
@@ -174,6 +187,14 @@
             .photo-container {
                 width: 200px;
                 height: 200px;
+            }
+            
+            .email-link {
+                font-size: 0.85rem; /* Texto menor em telas pequenas */
+            }
+            
+            .icon {
+                display: inline-flex !important; /* Força a exibição do ícone */
             }
         }
 
@@ -201,7 +222,7 @@
         
         <div class="content">
             <div class="photo-container animate delay-1">
-                <img src="imagem/foto1.png" alt="Profile Photo">
+                <img src="imagem/foto2.png" alt="Profile Photo">
             </div>
             
             <p class="message animate delay-2">
@@ -229,15 +250,13 @@
         </div>
         
         <footer>
-            <footer>
-                <a href="mailto:your-email@example.com" style="color: #666; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    contato.leandromjustino@gmail.com
-                </a>
-            </footer>
+            <a href="mailto:contato.leandromjustino@gmail.com" class="email-link">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                contato.leandromjustino@gmail.com
+            </a>
         </footer>
     </div>
 
