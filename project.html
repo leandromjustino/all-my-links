@@ -265,6 +265,15 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            font-size: 0; /* Remove espaços indesejados */
+            line-height: 0; /* Remove espaços indesejados */
+        }
+        
+        .about-image img {
+            display: block; /* Remove espaço abaixo da imagem */
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* Mantém o arredondamento */
         }
         
         .about-text {
@@ -309,7 +318,7 @@
             animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
             transform-origin: left;
             transform: scaleX(0);
-            margin-left: 0;
+            left: 0; /* Garante que a barra começa da esquerda */
         }
         
         @keyframes animate {
@@ -346,6 +355,15 @@
             width: 100%;
             height: 200px;
             background-color: #ddd;
+            line-height: 0; /* Remove espaços indesejados */
+            font-size: 0; /* Remove espaços indesejados */
+        }
+        
+        .project-img img {
+            display: block; /* Remove espaço abaixo da imagem */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem cubra o contêiner */
         }
         
         .project-content {
@@ -519,7 +537,7 @@
             }
             
             .section-title {
-                font-size: 2rem;
+                font-font-size: 2rem;
             }
             
             .hero-text h1 {
@@ -604,6 +622,8 @@
             
             .progress-line span {
                 transform-origin: left; /* Explicitly set origin to left */
+                transform: scaleX(0); /* Começa com escala zero */
+                left: 0; /* Garante que começa na esquerda */
                 animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards; /* Keep the animation */
             }
             
@@ -820,11 +840,6 @@
                     </div>
                     <button type="submit" class="btn">Enviar Mensagem</button>
                 </form>
-                
-                </form>
-                
-                </form>
-                
             </div>
         </div>
     </section>
