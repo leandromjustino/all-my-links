@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Contatos do WhatsApp</title>
+    <!-- Adicionando Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #25D366;
+            --secondary: #128C7E;
+            --accent: #075E54;
+            --background: #f8f9fa;
+            --text: #2d3b55;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .photo-container {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 1rem auto 2rem;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: var(--text);
+            font-weight: 300;
+            max-width: 80%;
+            line-height: 1.8;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-channel {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .btn-channel:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .btn-personal {
+            background-color: #075E54;
+            color: white;
+        }
+        
+        .btn-personal:hover {
+            background-color: #054C3F;
+            transform: translateY(-3px);
+        }
+        
+        .icon {
+            font-size: 24px;
+        }
+        
+        footer {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            background-color: #f5f5f5;
+        }
+        
+        @media (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+                max-width: 95%;
+            }
+            
+            .photo-container {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animate">Meus Contatos do WhatsApp</h1>
+            <p class="subtitle animate delay-1">Conecte-se comigo!</p>
+        </header>
+        
+        <div class="content">
+            <div class="photo-container animate delay-1">
+                <img src="imagem/FOTO7700.png" alt="Profile Photo">
+            </div>
+            
+            <p class="message animate delay-2">
+                Siga meu canal para acompanhar todo o conteúdo que eu produzo! Lá, você encontra tudo o que compartilho nas redes sociais e também arquivos exclusivos que crio.
+            </p>
+            
+            <div class="buttons animate delay-3">
+                <a href="#" class="btn btn-channel" id="channelBtn">
+                    <i class="fab fa-whatsapp icon"></i>
+                    Meu Canal
+                </a>
+                
+                <a href="#" class="btn btn-personal" id="personalBtn">
+                    <i class="fab fa-whatsapp icon"></i>
+                    Contato Pessoal
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Fale diretamente comigo pelo WhatsApp!</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const channelBtn = document.getElementById('channelBtn');
+            const personalBtn = document.getElementById('personalBtn');
+            
+            channelBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Replace with your actual WhatsApp channel link
+                window.open('https://whatsapp.com/channel/0029VaygdKWA2pL9WEoaZP0F', '_blank');
+            });
+            
+            personalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Replace with your actual personal WhatsApp contact link
+                window.open('https://wa.me/SEUNUMEROPESSOAL', '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
