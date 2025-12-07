@@ -1,282 +1,443 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support My Studies</title>
+    <title>Apoie Minha Jornada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base Styles - Same as Portfolio */
         :root {
-            --primary: #4a6fa5;
-            --secondary: #166088;
-            --accent: #4fc3f7;
-            --background: #f8f9fa;
-            --text: #2d3b55;
+            --primary: #1e3799;
+            --secondary: #4a6fde;
+            --dark: #2d2e32;
+            --light: #f9f9f9;
+            --text: #4a4a4a;
+            --transition: all 0.3s ease;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
-            background-color: var(--background);
+            background-color: var(--light);
             color: var(--text);
             line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
+            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .container:hover {
-            transform: translateY(-5px);
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        h1, h2, h3, h4 {
+            color: var(--dark);
             font-weight: 700;
         }
         
-        .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
         
-        .content {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
             text-align: center;
         }
         
-        .photo-container {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 1rem auto 2rem;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            background-color: #e0e0e0;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        /* Main Content Section */
+        #donate-section {
+            position: relative;
+            padding-top: 150px;
+            min-height: 100vh;
+        }
+        
+        .donate-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .donate-text {
+            flex: 1;
+        }
+        
+        .donate-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .donate-text h1 span {
+            color: var(--primary);
+        }
+        
+        .donate-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #777;
+        }
+        
+        .donate-image {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
+        .photo-container {
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+        
         .photo-container img {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         
-        .message {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            color: var(--text);
-            font-weight: 300;
-            max-width: 80%;
-            line-height: 1.8;
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
         
-        .buttons {
+        .donate-buttons {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 15px;
+            margin-top: 20px;
             flex-wrap: wrap;
-            justify-content: center;
         }
         
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
+        .donate-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
             text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .donate-btn:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .donate-btn.secondary {
+            background: var(--secondary);
+        }
+        
+        .donate-btn.secondary:hover {
+            background: var(--dark);
+        }
+        
+        .donate-btn i {
+            font-size: 1.3rem;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            gap: 10px;
+            color: #777;
+            font-size: 1rem;
         }
         
-        .btn-paypal {
-            background-color: #0070ba;
+        .contact-info i {
+            color: var(--primary);
+        }
+        
+        .contact-info a {
+            color: #777;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
             color: white;
-        }
-        
-        .btn-paypal:hover {
-            background-color: #005ea6;
-            transform: translateY(-3px);
-        }
-        
-        .btn-pix {
-            background-color: #32BCAD;
-            color: white;
-        }
-        
-        .btn-pix:hover {
-            background-color: #27a599;
-            transform: translateY(-3px);
-        }
-        
-        .icon {
-            width: 24px;
-            height: 24px;
-            min-width: 16px; /* Garante que o ícone não encolha demais */
-        }
-        
-        footer {
-            padding: 1.5rem;
+            padding: 30px 0;
             text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            background-color: #f5f5f5;
         }
         
-        .email-link {
-            color: #666; 
-            text-decoration: none; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 0.5rem;
-            flex-wrap: nowrap; /* Impede que o conteúdo quebre em linhas */
-            margin: 0 auto;
-            width: fit-content; /* Ajusta a largura ao conteúdo */
+        .footer p {
+            margin: 0;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .donate-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .donate-text {
+                order: 1;
+            }
+            
+            .donate-image {
+                order: 0;
+                margin-bottom: 30px;
+            }
+            
+            .donate-buttons {
+                justify-content: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .donate-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .photo-container {
+                width: 300px;
+                height: 300px;
+            }
         }
         
         @media (max-width: 768px) {
-            .buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
+            body {
+                padding-top: 70px;
             }
             
-            .btn {
+            .donate-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .donate-btn {
                 width: 100%;
                 justify-content: center;
             }
             
-            .message {
-                font-size: 1.2rem;
-                max-width: 95%;
-            }
-            
             .photo-container {
-                width: 200px;
-                height: 200px;
+                width: 250px;
+                height: 250px;
             }
             
-            .email-link {
-                font-size: 0.85rem; /* Texto menor em telas pequenas */
+            .contact-info {
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .donate-text h1 {
+                font-size: 2rem;
             }
             
-            .icon {
-                display: inline-flex !important; /* Força a exibição do ícone */
+            .donate-text p {
+                font-size: 1rem;
             }
         }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate {
-            animation: fadeIn 1s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 class="animate">Apoie Minha Jornada</h1>
-            <p class="subtitle animate delay-1">Sua generosidade faz a diferença!</p>
-        </header>
-        
-        <div class="content">
-            <div class="photo-container animate delay-1">
-                <img src="imagem/FOTO7700.png" alt="Profile Photo">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">Leandro M. Justino</a>
+        </div>
+    </nav>
+
+    <!-- Donate Section -->
+    <section id="donate-section">
+        <div class="container donate-container">
+            <div class="donate-text fade-in">
+                <h1>Apoie Minha <span>Jornada</span></h1>
+                <p>Cada pequena contribuição me ajuda. Seu apoio não é apenas uma doação — é um investimento! Todo dinheiro arrecadado será destinado ao financiamento dos meus estudos no exterior. Sua generosidade faz a diferença e me aproxima do meu sonho de estudar teologia nas melhores instituições do mundo.</p>
+                <div class="donate-buttons">
+                    <a href="#" class="donate-btn" id="paypalBtn">
+                        <i class="fab fa-paypal"></i>
+                        Doar com PayPal
+                    </a>
+                    <a href="#" class="donate-btn secondary" id="pixBtn">
+                        <i class="fas fa-qrcode"></i>
+                        Doar com PIX
+                    </a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>Por favor, me envie um e-mail em: 
+                        <a href="mailto:contato.leandromjustino@gmail.com">contato.leandromjustino@gmail.com</a>
+                    </span>
+                </div>
             </div>
-            
-            <p class="message animate delay-2">
-                Cada pequena contribuição me ajuda. Seu apoio não é apenas uma doação — é um investimento! Todo dinheiro arrecadado será destinado ao financiamento dos meus estudos no exterior. Por favor, me envie um e-mail contando por que você está fazendo essa contribuição!
-            </p>
-            
-            <div class="buttons animate delay-3">
-                <a href="#paypal-link" class="btn btn-paypal">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6.5 2h10.5c1.5 0 3 1.5 3 3 0 4-2.5 5-4 5h-7l-1 4h-3l2-12z"></path>
-                        <path d="M4.5 10h10.5c1.5 0 3 1.5 3 3 0 4-2.5 5-4 5h-7l-1 4h-3l2-12z"></path>
-                    </svg>
-                    Doar com o PayPal
-                </a>
-                
-                <a href="#pix-link" class="btn btn-pix">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                        <path d="M2 17l10 5 10-5"></path>
-                        <path d="M2 12l10 5 10-5"></path>
-                    </svg>
-                    Doar com o PIX
-                </a>
+            <div class="donate-image fade-in">
+                <div class="photo-container">
+                    <img src="imagem/2020FOTO.png" alt="Foto de Perfil">
+                </div>
             </div>
         </div>
-        
-        <footer>
-            <a href="mailto:contato.leandromjustino@gmail.com" class="email-link">
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                contato.leandromjustino@gmail.com
-            </a>
-        </footer>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Leandro M. Justino. Todos Os Direitos Reservados.</p>
+        </div>
+    </footer>
 
     <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Fade-in animations on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function fadeIn() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+        }
+        
+        // Initial check
+        fadeIn();
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeIn);
+        
+        // Donation links
         document.addEventListener('DOMContentLoaded', () => {
-            // You can replace the placeholder with actual image
-            // Replace PayPal and PIX links with actual ones
-            const paypalBtn = document.querySelector('.btn-paypal');
-            const pixBtn = document.querySelector('.btn-pix');
+            const paypalBtn = document.getElementById('paypalBtn');
+            const pixBtn = document.getElementById('pixBtn');
             
             paypalBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Replace with actual PayPal link
                 window.open('https://www.paypal.com/donate/?hosted_button_id=S9B8HJGXPNWDE', '_blank');
             });
             
             pixBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Show PIX QR code or copy PIX key
-                window.open('https://nubank.com.br/cobrar/orj2w/67d2e12c-8e29-4e68-9ac7-579ec0f572dc')
+                window.open('https://nubank.com.br/cobrar/orj2w/67d2e12c-8e29-4e68-9ac7-579ec0f572dc', '_blank');
             });
         });
     </script>

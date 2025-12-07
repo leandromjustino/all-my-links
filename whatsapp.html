@@ -3,243 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My WhatsApp contacts</title>
-    <!-- Adicionando Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Meus Contatos do WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base Styles - Same as Portfolio */
         :root {
-            --primary: #25D366;
-            --secondary: #128C7E;
-            --accent: #075E54;
-            --background: #f8f9fa;
-            --text: #2d3b55;
+            --primary: #1e3799;
+            --secondary: #4a6fde;
+            --dark: #2d2e32;
+            --light: #f9f9f9;
+            --text: #4a4a4a;
+            --transition: all 0.3s ease;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
-            background-color: var(--background);
+            background-color: var(--light);
             color: var(--text);
             line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
+            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .container:hover {
-            transform: translateY(-5px);
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        h1, h2, h3, h4 {
+            color: var(--dark);
             font-weight: 700;
         }
         
-        .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
         
-        .content {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
             text-align: center;
         }
         
-        .photo-container {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 1rem auto 2rem;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            background-color: #e0e0e0;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        /* Main Content Section */
+        #whatsapp-section {
+            position: relative;
+            padding-top: 150px;
+            min-height: 100vh;
+        }
+        
+        .whatsapp-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .whatsapp-text {
+            flex: 1;
+        }
+        
+        .whatsapp-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .whatsapp-text h1 span {
+            color: var(--primary);
+        }
+        
+        .whatsapp-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #777;
+        }
+        
+        .whatsapp-image {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
+        .photo-container {
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+        
         .photo-container img {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         
-        .message {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            color: var(--text);
-            font-weight: 300;
-            max-width: 80%;
-            line-height: 1.8;
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
         
-        .buttons {
+        .whatsapp-buttons {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 15px;
+            margin-top: 20px;
             flex-wrap: wrap;
-            justify-content: center;
         }
         
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: flex;
+        .whatsapp-btn {
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-channel {
-            background-color: #25D366;
+            gap: 10px;
+            padding: 12px 28px;
+            background: var(--primary);
             color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1.1rem;
         }
         
-        .btn-channel:hover {
-            background-color: #128C7E;
+        .whatsapp-btn:hover {
+            background: var(--dark);
             transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
-        .btn-personal {
-            background-color: #075E54;
+        .whatsapp-btn.secondary {
+            background: var(--secondary);
+        }
+        
+        .whatsapp-btn.secondary:hover {
+            background: var(--dark);
+        }
+        
+        .whatsapp-btn i {
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
             color: white;
-        }
-        
-        .btn-personal:hover {
-            background-color: #054C3F;
-            transform: translateY(-3px);
-        }
-        
-        .icon {
-            font-size: 24px;
-        }
-        
-        footer {
-            padding: 1.5rem;
+            padding: 30px 0;
             text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            background-color: #f5f5f5;
+        }
+        
+        .footer p {
+            margin: 0;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .whatsapp-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .whatsapp-text {
+                order: 1;
+            }
+            
+            .whatsapp-image {
+                order: 0;
+                margin-bottom: 30px;
+            }
+            
+            .whatsapp-buttons {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .photo-container {
+                width: 300px;
+                height: 300px;
+            }
         }
         
         @media (max-width: 768px) {
-            .buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
+            body {
+                padding-top: 70px;
             }
             
-            .btn {
+            .whatsapp-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .whatsapp-btn {
                 width: 100%;
                 justify-content: center;
             }
             
-            .message {
-                font-size: 1.2rem;
-                max-width: 95%;
+            .photo-container {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .whatsapp-text h1 {
+                font-size: 2rem;
             }
             
-            .photo-container {
-                width: 200px;
-                height: 200px;
+            .whatsapp-text p {
+                font-size: 1rem;
             }
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate {
-            animation: fadeIn 1s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 class="animate">Meus Contatos do WhatsApp</h1>
-            <p class="subtitle animate delay-1">Conecte-se comigo!</p>
-        </header>
-        
-        <div class="content">
-            <div class="photo-container animate delay-1">
-                <img src="imagem/FOTO7700.png" alt="Profile Photo">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">Leandro M. Justino</a>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Section -->
+    <section id="whatsapp-section">
+        <div class="container whatsapp-container">
+            <div class="whatsapp-text fade-in">
+                <h1>Meus Contatos do <span>WhatsApp</span></h1>
+                <p>Siga meu canal para acompanhar todo o conteúdo que eu produzo! Lá, você encontra tudo o que compartilho nas redes sociais e também arquivos exclusivos que crio. Fique à vontade para entrar em contato diretamente comigo!</p>
+                <div class="whatsapp-buttons">
+                    <a href="#" class="whatsapp-btn" id="channelBtn">
+                        <i class="fab fa-whatsapp"></i>
+                        Meu Canal
+                    </a>
+                    <a href="#" class="whatsapp-btn secondary" id="personalBtn">
+                        <i class="fab fa-whatsapp"></i>
+                        Contato Pessoal
+                    </a>
+                </div>
             </div>
-            
-            <p class="message animate delay-2">
-                Siga meu canal para acompanhar todo o conteúdo que eu produzo! Lá, você encontra tudo o que compartilho nas redes sociais e também arquivos exclusivos que crio.
-            </p>
-            
-            <div class="buttons animate delay-3">
-                <a href="#" class="btn btn-channel" id="channelBtn">
-                    <i class="fab fa-whatsapp icon"></i>
-                    Meu Canal
-                </a>
-                
-                <a href="#" class="btn btn-personal" id="personalBtn">
-                    <i class="fab fa-whatsapp icon"></i>
-                    Contato Pessoal
-                </a>
+            <div class="whatsapp-image fade-in">
+                <div class="photo-container">
+                    <img src="imagem/2020FOTO.png" alt="Foto de Perfil">
+                </div>
             </div>
         </div>
-        
-        <footer>
-            <p>Fale diretamente comigo pelo WhatsApp!</p>
-        </footer>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Leandro M. Justino. Todos Os Direitos Reservados.</p>
+        </div>
+    </footer>
 
     <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Fade-in animations on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function fadeIn() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+        }
+        
+        // Initial check
+        fadeIn();
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeIn);
+        
+        // WhatsApp links
         document.addEventListener('DOMContentLoaded', () => {
             const channelBtn = document.getElementById('channelBtn');
             const personalBtn = document.getElementById('personalBtn');
             
             channelBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Replace with your actual WhatsApp channel link
                 window.open('https://whatsapp.com/channel/0029VaygdKWA2pL9WEoaZP0F', '_blank');
             });
             
             personalBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Replace with your actual personal WhatsApp contact link
                 window.open('https://wa.me/message/PKIXCOQ6V4B2C1', '_blank');
             });
         });
