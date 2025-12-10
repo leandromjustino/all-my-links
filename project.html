@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
-    <!-- Added Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Base Styles */
         :root {
             --primary: #1e3799;
             --secondary: #4a6fde;
@@ -94,7 +92,6 @@
             max-width: 100%;
         }
         
-        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
@@ -143,7 +140,7 @@
         }
         
         .nav-links a i {
-            margin-right: 5px; /* Added spacing between icon and text */
+            margin-right: 5px;
         }
         
         .nav-links a::after {
@@ -178,7 +175,6 @@
             transition: var(--transition);
         }
         
-        /* Hero Section */
         #home {
             position: relative;
             padding-top: 150px;
@@ -210,6 +206,7 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
             color: #777;
+            text-align: justify;
         }
         
         .hero-image {
@@ -253,7 +250,6 @@
             background-color: var(--dark);
         }
         
-        /* About Section */
         #about .about-container {
             display: flex;
             align-items: center;
@@ -265,15 +261,15 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            font-size: 0; /* Remove espaços indesejados */
-            line-height: 0; /* Remove espaços indesejados */
+            font-size: 0;
+            line-height: 0;
         }
         
         .about-image img {
-            display: block; /* Remove espaço abaixo da imagem */
+            display: block;
             width: 100%;
             height: auto;
-            border-radius: 10px; /* Mantém o arredondamento */
+            border-radius: 10px;
         }
         
         .about-text {
@@ -287,6 +283,8 @@
         
         .about-text p {
             margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.2rem;
         }
         
         .skill-bars {
@@ -318,7 +316,7 @@
             animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
             transform-origin: left;
             transform: scaleX(0);
-            left: 0; /* Garante que a barra começa da esquerda */
+            left: 0;
         }
         
         @keyframes animate {
@@ -327,7 +325,6 @@
             }
         }
         
-        /* Projects Section */
         #projects {
             background-color: #f5f5f5;
         }
@@ -355,20 +352,20 @@
             width: 100%;
             height: 200px;
             background-color: #ddd;
-            line-height: 0; /* Remove espaços indesejados */
-            font-size: 0; /* Remove espaços indesejados */
+            line-height: 0;
+            font-size: 0;
         }
         
         .project-img img {
-            display: block; /* Remove espaço abaixo da imagem */
+            display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Garante que a imagem cubra o contêiner */
+            object-fit: cover;
         }
         
         .project-content {
             padding: 20px;
-            text-align: center; /* Center the project title and text */
+            text-align: center;
         }
         
         .project-content h3 {
@@ -384,7 +381,7 @@
         .project-links {
             display: flex;
             gap: 15px;
-            justify-content: center; /* Center the buttons */
+            justify-content: center;
         }
         
         .project-link {
@@ -410,7 +407,6 @@
             transform: translateY(-3px);
         }
         
-        /* Contact Section */
         #contact {
             background-color: var(--light);
         }
@@ -490,7 +486,6 @@
             min-height: 150px;
         }
         
-        /* Footer */
         .footer {
             background-color: var(--dark);
             color: white;
@@ -502,7 +497,6 @@
             margin: 0;
         }
         
-        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -514,7 +508,6 @@
             transform: translateY(0);
         }
         
-        /* Responsive */
         @media (max-width: 992px) {
             .hero-container, 
             #about .about-container,
@@ -537,7 +530,7 @@
             }
             
             .section-title {
-                font-font-size: 2rem;
+                font-size: 2rem;
             }
             
             .hero-text h1 {
@@ -602,14 +595,13 @@
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
             
-            /* Fixed skill bars on mobile */
             .skill-bars {
                 width: 100%;
             }
             
             .skill-bar {
                 margin-bottom: 15px;
-                text-align: left; /* Ensure text stays left-aligned */
+                text-align: left;
             }
             
             .skill-info {
@@ -621,13 +613,12 @@
             }
             
             .progress-line span {
-                transform-origin: left; /* Explicitly set origin to left */
-                transform: scaleX(0); /* Começa com escala zero */
-                left: 0; /* Garante que começa na esquerda */
-                animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards; /* Keep the animation */
+                transform-origin: left;
+                transform: scaleX(0);
+                left: 0;
+                animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
             }
             
-            /* Keep contact item titles left-aligned on small screens */
             .contact-container {
                 text-align: center;
             }
@@ -653,7 +644,6 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="#home" class="logo">Leandro M. Justino</a>
@@ -671,12 +661,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home">
         <div class="container hero-container">
             <div class="hero-text fade-in">
                 <h1>Olá, Sou <span>Leandro</span></h1>
-                <p>um cristão que se comprometeu a dedicar sua vida ao estudo da Bíblia. Durante o seminário, ao saberem que eu pretendia prosseguir meus estudos em teologia, alguns professores tentaram me fazer desistir. Uns me aconselharam a cursar algo que oferecesse melhores oportunidades financeiras, enquanto outros disseram que eu morreria pobre. Não os julgo, eu os entendo. Mas sigo inabalável. Não decidi estudar teologia com o objetivo de ganhar dinheiro. Minha escolha foi movida por algo muito maior do que recompensas financeiras. Não vou retroceder. Enquanto eu tiver fôlego, seguirei esse caminho, custe o que custar! Não permitirei que ninguém roube, com palavras, os sonhos que Deus me deu. É Ele quem escreve minha história!</p>
+                <p>Sou um cristão comprometido com a pesquisa e o estudo sistemático das Escrituras. Ao longo da minha formação teológica, constatei que essa área nem sempre é vista como o caminho mais viável do ponto de vista profissional. Ainda assim, mantenho meu compromisso acadêmico e vocacional com a teologia, reconhecendo seu valor intelectual, histórico e social. Minha trajetória é motivada não por expectativas financeiras, mas por um propósito maior: contribuir para a produção de conhecimento, para a interpretação responsável dos textos bíblicos e para o diálogo entre fé, tradição e sociedade. Busco desenvolver meu trabalho com rigor metodológico, seriedade intelectual e dedicação contínua.</p>
                 <a href="https://www.youtube.com/@leandromjustino" class="btn">Veja Meu Trabalho</a>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/mjustinoleandro" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -691,7 +680,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2 class="section-title fade-in">Sobre Mim</h2>
@@ -701,7 +689,7 @@
                 </div>
                 <div class="about-text fade-in">
                     <h2>Quem Eu Sou</h2>
-                    <p>Trabalho de segunda a sábado no horário comercial e dedico meu tempo livre ao estudo de grego, hebraico, aramaico e latim. Acredito que isso me capacitará a fazer qualquer estudo avançado sobre a Bíblia. Minha dedicação acadêmica transformou-se após eu me tornar cristão. Diferente dos tempos escolares, quando me dedicava apenas o suficiente para passar, hoje sou movido pelo desejo de compreender a Bíblia. Também estudo inglês, que é essencial para estudos avançados e acesso a recursos globais. Meu foco atual é o grego koiné, idioma bíblico que mais me interessa. Acredito que, por meio do estudo e ensino da Bíblia, posso transformar este mundo em um lugar melhor. Criei redes sociais para documentar meu progresso e compartilhar o que tenho aprendido. Além disso, anuncio a Palavra de Deus nas ruas da minha cidade.</p>
+                    <p>Dedico meu tempo livre ao estudo das línguas originais da Bíblia, como grego, hebraico e aramaico, e também do latim, que integra meu percurso de formação linguística. Meu objetivo é desenvolver a competência necessária para pesquisas avançadas em estudos bíblicos e áreas correlatas. Também estudo inglês, essencial para o acesso a literatura especializada e recursos internacionais. Atualmente, meu foco principal é o grego koiné, idioma central para o estudo do Novo Testamento. Utilizo as redes sociais para documentar meu progresso acadêmico e compartilhar parte do meu processo de formação. Além disso, desenvolvo atividades de ensino e divulgação bíblica em minha comunidade local.</p>
                     <p>Este é o que eu considero ser o meu entendimento dos idiomas que estudo:</p>
                     <div class="skill-bars">
                         <div class="skill-bar">
@@ -731,14 +719,14 @@
                                 <span style="width: 5%;"></span>
                             </div>
                         </div>
-                            <div class="skill-bar">
-                                <div class="skill-info">
-                                    <span>Inglês</span>
-                                    <span>40%</span>
-                                </div>
-                                <div class="progress-line">
-                                    <span style="width: 40%;"></span>
-                                </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Inglês</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="progress-line">
+                                <span style="width: 40%;"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -746,7 +734,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title fade-in">Meus Objetivos</h2>
@@ -757,7 +744,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Estudar Nos EUA</h3>
-                        <p>Meu propósito é progredir na minha educação em uma das instituições de elite dos Estados Unidos — Harvard, Yale ou Universidade de Chicago — para ter uma experiência internacional que amplie meus horizontes culturais, me prepare para atuar em um contexto global e me desafie em um ambiente de excelência acadêmica.</p>
+                        <p>Meu propósito é progredir na minha educação em uma das instituições de elite dos Estados Unidos, Harvard, Yale ou Universidade de Chicago, para ter uma experiência internacional que amplie meus horizontes culturais, me prepare para atuar em um contexto global e me desafie em um ambiente de excelência acadêmica.</p>
                         <div class="project-links">
                             <a href="https://www.youtube.com/@leandromjustino" class="project-link demo-link">Ver no YouTube</a>
                         </div>
@@ -769,7 +756,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Estudar Na Europa</h3>
-                        <p>Busco me envolver profundamente e participar ativamente das tradições centenárias de rigor acadêmico das prestigiadas universidades europeias—Oxford, Cambridge, Edimburgo ou Birmingham—onde o pensamento inovador se encontra com a excelência histórica.</p>
+                        <p>Busco me envolver profundamente e participar ativamente das tradições centenárias de rigor acadêmico das prestigiadas universidades europeias, Oxford, Cambridge, Edimburgo ou Birmingham, onde o pensamento inovador se encontra com a excelência histórica.</p>
                         <div class="project-links">
                             <a href="https://www.youtube.com/@leandromjustino" class="project-link demo-link">Ver no YouTube</a>
                         </div>
@@ -777,11 +764,11 @@
                 </div>
                 <div class="project-card fade-in">
                     <div class="project-img">
-                        <img src="imagem/foto777.png" alt="placeholder">
+                        <img src="imagem/9090FOTO.png" alt="placeholder">
                     </div>
                     <div class="project-content">
-                        <h3>Fundar Uma Organização</h3>
-                        <p>Minha busca por educação em instituições de elite nos Estados Unidos e na Europa me capacitará com o conhecimento e com a rede global necessária para estabelecer uma organização sem fins lucrativos dedicada a tornar o grego bíblico acessível às comunidades de língua portuguesa.</p>
+                        <h3>Humanidades Digitais na Teologia</h3>
+                        <p>Minha busca por formação em instituições de excelência nos Estados Unidos e na Europa visa capacitar-me para desenvolver iniciativas em Humanidades Digitais aplicadas à teologia, promovendo inovação no estudo das Escrituras.</p>
                         <div class="project-links">
                             <a href="https://www.youtube.com/@leandromjustino" class="project-link demo-link">Ver no YouTube</a>
                         </div>
@@ -791,7 +778,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title fade-in">Entre Em Contato</h2>
@@ -844,7 +830,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Leandro M. Justino. Todos Os Direitos Reservados.</p>
@@ -852,7 +837,6 @@
     </footer>
 
     <script>
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -862,7 +846,6 @@
             }
         });
         
-        // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         
@@ -871,7 +854,6 @@
             navLinks.classList.toggle('active');
         });
         
-        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -879,7 +861,6 @@
             });
         });
         
-        // Fade-in animations on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
         
         function fadeIn() {
@@ -892,13 +873,9 @@
             });
         }
         
-        // Initial check
         fadeIn();
-        
-        // Check on scroll
         window.addEventListener('scroll', fadeIn);
         
-        // Active nav link based on scroll position
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('.nav-links a');
         
