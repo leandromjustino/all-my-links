@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biblioteca de Leandro M. Justino: artigos, estudos, guias, PDFs e materiais em diferentes áreas do conhecimento.">
+  <title>Biblioteca | Leandro M. Justino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Leandro M. Justino</a>
+      <div class="header-actions"><a class="language-switch" href="index.html">Início <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </header>
+
+  <main class="library-v2-page">
+    <div class="container">
+      <section class="library-v2-hero">
+        <span class="eyebrow">Biblioteca / Library</span>
+        <h1>Artigos, materiais e recursos em <span>um só lugar.</span></h1>
+        <p class="text-lead library-v2-intro">Use a busca, os idiomas e os filtros para navegar por conteúdos de Teologia, ENEM, Tecnologia, Ciência da Computação, Programação e outras áreas que forem adicionadas ao acervo.</p>
+      </section>
+
+      <section aria-label="Ferramentas da biblioteca">
+        <div class="library-toolbar">
+          <div class="library-toolbar-main">
+            <div class="library-search-wrap">
+              <input class="library-search-v2" type="search" placeholder="Buscar por título, tema, subárea ou tag..." autocomplete="off" aria-label="Buscar na biblioteca" data-lib-search>
+              <span class="library-search-icon" aria-hidden="true">⌕</span>
+            </div>
+            <div class="library-language-tabs" aria-label="Idioma">
+              <button class="library-tab is-active" type="button" data-lang="all" aria-pressed="true">Todos / All</button>
+              <button class="library-tab" type="button" data-lang="pt" aria-pressed="false">Português</button>
+              <button class="library-tab" type="button" data-lang="en" aria-pressed="false">English</button>
+            </div>
+          </div>
+
+          <details class="library-advanced" data-advanced>
+            <summary>Filtros avançados</summary>
+            <div class="library-advanced-panel">
+              <div class="library-filter-grid">
+                <div class="library-field"><label for="areaFilter">Área</label><select id="areaFilter" data-area><option value="all">Todas as áreas</option></select></div>
+                <div class="library-field"><label for="subareaFilter">Subárea</label><select id="subareaFilter" data-subarea disabled><option value="all">Todas as subáreas</option></select></div>
+                <div class="library-field"><label for="typeFilter">Tipo</label><select id="typeFilter" data-type><option value="all">Todos os tipos</option></select></div>
+                <div class="library-field"><label for="levelFilter">Nível</label><select id="levelFilter" data-level><option value="all">Todos os níveis</option></select></div>
+                <div class="library-field"><label for="yearFilter">Ano</label><select id="yearFilter" data-year><option value="all">Todos os anos</option></select></div>
+                <div class="library-field"><label for="sortFilter">Ordenar</label><select id="sortFilter" data-sort><option value="newest">Mais recentes</option><option value="oldest">Mais antigos</option><option value="az">Título A–Z</option><option value="za">Título Z–A</option></select></div>
+              </div>
+              <div class="library-filter-actions"><button class="library-clear" type="button" data-clear>Limpar filtros</button></div>
+            </div>
+          </details>
+        </div>
+
+        <div class="library-active-row" data-active-filters aria-live="polite"></div>
+        <div class="library-results-head">
+          <div><h2>Conteúdos</h2><p class="library-results-count"><strong data-result-count>0</strong> resultados encontrados</p></div>
+          <p class="library-page-indicator" data-page-indicator></p>
+        </div>
+        <div class="library-v2-grid" data-library-grid aria-live="polite"></div>
+        <div class="library-empty-v2" data-library-empty><strong>Nenhum conteúdo encontrado.</strong><br>Tente remover algum filtro ou pesquisar por outro termo.</div>
+        <nav class="library-pagination" aria-label="Paginação da biblioteca" data-pagination></nav>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span>© 2026 Leandro M. Justino. Todos os direitos reservados.</span><div class="footer-links"><a href="index.html">Início</a><a href="about.html">Sobre mim</a><a href="donate.html">Doação</a></div></div></footer>
+  <script src="assets/js/library.js"></script>
+</body>
+</html>
