@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ2YXV1ZTT"></script>
-  <script>
+  <!-- Google Analytics: somente no site publicado -->
+<script>
+  (function () {
+    const isProduction =
+      window.location.hostname === "leandromjustino.github.io" &&
+      (
+        window.location.pathname === "/all-my-links" ||
+        window.location.pathname.startsWith("/all-my-links/")
+      );
+
+    if (!isProduction) return;
+
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CQ2YXV1ZTT');
-  </script>
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    window.gtag = gtag;
+
+    const googleTag = document.createElement("script");
+    googleTag.async = true;
+    googleTag.src = "https://www.googletagmanager.com/gtag/js?id=G-CQ2YXV1ZTT";
+    document.head.appendChild(googleTag);
+
+    gtag("js", new Date());
+    gtag("config", "G-CQ2YXV1ZTT");
+  })();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Canais de WhatsApp de Leandro M. Justino para acompanhar conteúdos e entrar em contato.">
